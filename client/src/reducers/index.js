@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import { reducer as reduxForm } from 'redux-form';
-import authReducer from './authReducer';
-import surveysReducer from './surveysReducer';
+import { reducer as formReducer } from 'redux-form';
+import tripReducer from './tripReducer';
+import authReducer from './auth_reducer'
 
-export default combineReducers({
-  auth: authReducer,
-  form: reduxForm,
-  surveys: surveysReducer
+const rootReducer = combineReducers({
+  form: formReducer,
+  trips: tripReducer,
+  auth: authReducer
 });
+
+export default rootReducer;

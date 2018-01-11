@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
+import 'react-widgets/dist/css/react-widgets.css'
+
 import { BrowserRouter, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
-import Header from './Header';
-import Landing from './Landing';
-import Dashboard from './Dashboard';
-import SurveyNew from './surveys/SurveyNew';
+
+import NewTripForm from './NewTripForm'
+import TripDisplay from './TripDisplay'
+import Header from './Header'
+import Signin from './auth/signin'
+import Signup from './auth/signup'
+import Signout from './auth/signout'
+
 
 class App extends Component {
-  componentDidMount() {
-    this.props.fetchUser();
-  }
-
   render() {
     return (
       <BrowserRouter>
         <div className="container">
           <Header />
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/surveys" component={Dashboard} />
-          <Route path="/surveys/new" component={SurveyNew} />
+          <Route exact path="/" component={NewTripForm} />
+          <Route path="/trips" component={TripDisplay} />
+          <Route path="/signin" component={Signin} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/signout" component={Signout} />
         </div>
       </BrowserRouter>
     );
   }
 }
 
-export default connect(null, actions)(App);
+export default App;

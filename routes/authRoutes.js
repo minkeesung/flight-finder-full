@@ -1,4 +1,5 @@
 const passport = require('passport');
+const Authentication = require('../controllers/authentication')
 
 module.exports = app => {
   app.get(
@@ -7,6 +8,7 @@ module.exports = app => {
       scope: ['profile', 'email']
     })
   );
+
 
   app.get(
     '/auth/google/callback',
@@ -24,4 +26,14 @@ module.exports = app => {
   app.get('/api/current_user', (req, res) => {
     res.send(req.user);
   });
+
+  app.get('/signup', (req, res) => {
+    res.send('o hello how are you')
+  })
+
+  app.post('/signup', (req, res) => {
+    res.send('o hello how are you')
+  })
+
+
 };
