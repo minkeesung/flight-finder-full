@@ -17,8 +17,8 @@ app.use(cors())
 app.use(bodyParser.json({ type: '*/*'}))
 router(app)
 
-const port = process.env.PORT || 3090
+const PORT = process.env.PORT || 3090
 const server = http.createServer(app)
 
-server.listen(port)
-console.log('server listening on:', port)
+server.listen(PORT)
+console.log('server listening on:', PORT)
