@@ -3,9 +3,10 @@ import reqBody from '../utils/api_body';
 import parse_api_response from '../utils/parsing';
 import convert_city_to_airportcode from '../utils/cities'
 import { FETCH_TRIPS, AUTH_USER, UNAUTH_USER, AUTH_ERROR, FETCH_MESSAGE } from './types';
-
+import * as API from '../qpx-express'
 const API_KEY = 'AIzaSyBW6j4MVKhK1fRRHAc7FI28zn3PBGZO_Wc';
-var API = require('qpx-express');
+// var API = require('qpx-express');
+
 var qpx = new API(API_KEY);
 
 
