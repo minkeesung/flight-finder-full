@@ -8,9 +8,11 @@ const app = express()
 const router = require('./router')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const keys = require('./config/keys')
 
+// keys.mongoURI
 
-mongoose.connect('mongodb://localhost:auth/auth');
+mongoose.connect(keys.mongoURI);
 
 app.use(morgan('combined'))
 app.use(cors())

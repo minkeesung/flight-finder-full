@@ -9,8 +9,6 @@ const API_KEY = 'AIzaSyBW6j4MVKhK1fRRHAc7FI28zn3PBGZO_Wc';
 
 var qpx = new API(API_KEY);
 
-
-
 export const fetchTrips = (values, history) => async dispatch => {
   let trips = 'something';
   let i = values.departure_date.toISOString().indexOf('T')
