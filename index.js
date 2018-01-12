@@ -12,7 +12,7 @@ const keys = require('./config/keys')
 
 // keys.mongoURI
 
-mongoose.connect('mongodb://minkeesung:password@ds251197.mlab.com:51197/flight_finder_dev');
+mongoose.connect(keys.mongoURI);
 
 app.use(morgan('combined'))
 app.use(cors())
