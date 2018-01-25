@@ -6,7 +6,7 @@ const userSchema = new Schema({
   email: { type: String, unique: true, lowercase: true },
   password: String
 });
-
+// sodfijsdfoij
 
 userSchema.pre('save', function(next) {
   const user = this;
