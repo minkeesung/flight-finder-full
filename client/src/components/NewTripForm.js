@@ -11,6 +11,7 @@ import '../css/NewTripForm.css'
 import '../css/grid.css'
 import 'react-widgets/dist/css/react-widgets.css'
 
+
 momentLocalizer(moment)
 
 const locations = [ 'NYC', 'Los Angeles' ]
@@ -70,15 +71,15 @@ class NewTripForm extends Component {
         <h1>Flight Finder</h1>
         <form className="trip-form" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <div className="row">
-          <div className="col span-1-of-2">
-            <label>Origin</label>
-            <Field
-              name="origin"
-              component={this.renderDropdownList}
-              data={locations}
-              valueField="value"
+            <div className="col span-1-of-2">
+              <label>Origin</label>
+              <Field
+                name="origin"
+                component={this.renderDropdownList}
+                data={locations}
+                valueField="value"
               textField="origin"/>
-          </div>
+            </div>
 
             <div className="col span-1-of-2">
               <label>Destination</label>
@@ -87,80 +88,54 @@ class NewTripForm extends Component {
                 component={this.renderDropdownList}
                 data={locations}
                 valueField="value"
-                textField="destination"/>
+              textField="destination"/>
             </div>
           </div>
           <div className="row">
-              <div className="col span-1-of-4">
-                <div className="departure_date">
-                    <label>Departure Date</label>
-                    <Field
-                      name="departure_date"
-                      showTime={false}
-                      component={this.renderDateTimePicker}
-                    />
-                </div>
-              </div>
-              <div className="col span-1-of-4">
-                <div className="arrival_date">
-                    <label>Arrival Date</label>
-                    <Field
-                      name="arrival_date"
-                      showTime={false}
-                      component={this.renderDateTimePicker}
-                    />
-                </div>
-              </div>
-              <div className="col span-1-of-4">
-                <div className="num_guests">
-                  <label>Number of Guests</label>
-                  <Field
-                    name="numGuests"
-                    component={this.renderDropdownList}
-                    data={num_passengers}
-                    valueField="value"
-                    textField="numGuests"/>
-                </div>
+            <div className="col span-1-of-4">
+              <div className="departure_date">
+                <label>Departure Date</label>
+                <Field
+                  name="departure_date"
+                  showTime={false}
+                  component={this.renderDateTimePicker}
+                />
               </div>
             </div>
+            <div className="col span-1-of-4">
+              <div className="arrival_date">
+                <label>Arrival Date</label>
+                <Field
+                  name="arrival_date"
+                  showTime={false}
+                  component={this.renderDateTimePicker}
+                />
+              </div>
+            </div>
+            <div className="col span-1-of-4">
+              <div className="num_guests">
+                <label>Number of Guests</label>
+                <Field
+                  name="numGuests"
+                  component={this.renderDropdownList}
+                  data={num_passengers}
+                  valueField="value"
+                textField="numGuests"/>
+              </div>
+            </div>
+          </div>
 
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </form>
-
-        </div>
-
-
-
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
     );
   }
 }
 
 function validate(values) {
-  const errors = {};
-
-  if (!values.budget) {
-    errors.budget = 'Enter a budget!';
-  }
-  if (!values.origin) {
-    errors.origin = 'Enter an origin!';
-  }
-  if (!values.numGuests) {
-    errors.numGuests = 'Enter number of guests!';
-  }
-  if (!values.departure_date) {
-    errors.departure_date = 'Enter a departure date!';
-  }
-  if (!values.destination) {
-    errors.destination = 'Enter a destination!';
-  }
-
-  if (!values.arrival_date) {
-    errors.arrival_date = 'Enter an arrival date!';
-  }
-
-  return errors;
+  return null;
 }
 
 export default reduxForm({

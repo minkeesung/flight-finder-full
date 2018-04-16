@@ -5,17 +5,23 @@ export default function(error, flights) {
     let h = {};
     h['saleTotal'] = trip['saleTotal'];
     h['carrier'] = trip['slice'][0]['segment'][0]['flight']['carrier'];
-    h['arrival_time_when_leaving_home'] =
+    h['arrival_time'] =
       trip['slice'][0]['segment'][0]['leg'][0]['arrivalTime'];
-    h['departure_time_when_leaving_home'] =
+    h['departure_time'] =
       trip['slice'][0]['segment'][0]['leg'][0]['departureTime'];
-    h['arrival_time_when_coming_home'] =
-      trip['slice'][1]['segment'][0]['leg'][0]['arrivalTime'];
-    h['departure_time_when_coming_home'] =
-      trip['slice'][1]['segment'][0]['leg'][0]['departureTime'];
     h['origin'] = trip['slice'][0]['segment'][0]['leg'][0]['origin'];
     h['destination'] = trip['slice'][0]['segment'][0]['leg'][0]['destination'];
     trips.push(h);
   });
+
   return trips;
 }
+
+// h['arrival_time_when_leaving_home'] =
+//   trip['slice'][0]['segment'][0]['leg'][0]['arrivalTime'];
+// h['departure_time_when_leaving_home'] =
+//   trip['slice'][0]['segment'][0]['leg'][0]['departureTime'];
+// h['arrival_time_when_coming_home'] =
+//   trip['slice'][1]['segment'][0]['leg'][0]['arrivalTime'];
+// h['departure_time_when_coming_home'] =
+//   trip['slice'][1]['segment'][0]['leg'][0]['departureTime'];

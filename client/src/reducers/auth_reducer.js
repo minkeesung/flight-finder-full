@@ -10,6 +10,8 @@ export default function(state = {}, action) {
       return { ...state, error: action.payload }
     case FETCH_MESSAGE:
       return { ...state, message: action.payload }
+    default:
+      return state
   }
 
   return state;

@@ -16,7 +16,7 @@ mongoose.connect(keys.mongoURI);
 
 app.use(morgan('combined'))
 app.use(cors())
-app.use(bodyParser.json({ type: '*/*'}))
+app.use(bodyParser.json({ type: '*/*' }))
 router(app)
 
 if(process.env.NODE_ENV === 'production') {

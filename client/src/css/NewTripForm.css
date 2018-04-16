@@ -91,3 +91,13 @@ body {
 .has-danger {
   color: red;
 }
+/* -------------------- */
+/*     header           */
+/* ---------------------*/
+#sign-up-in {
+  flex-direction: row;
+}
+
+#sign-up-in a {
+  padding-left: 10px;
+}

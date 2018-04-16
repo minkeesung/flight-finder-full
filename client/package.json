@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "bootstrap": "^4.1.0",
     "materialize-css": "^0.100.1",
     "moment": "^2.19.4",
     "qpx-express": "^16.1.12",

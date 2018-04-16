@@ -1,4 +1,5 @@
 const Authentication = require('./controllers/authentication');
+const trips = require('./controllers/trips')
 const passportService = require('./services/passport')
 const passport = require('passport')
 
@@ -11,4 +12,5 @@ module.exports = function(app) {
   })
   app.post('/api/signin', requireSignin, Authentication.signin)
   app.post('/api/signup', Authentication.signup)
+  app.post('/api/savetrip', trips.savetrip )
 }

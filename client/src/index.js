@@ -8,6 +8,7 @@ import reduxThunk from 'redux-thunk';
 import App from './components/App';
 import reducers from './reducers';
 import axios from 'axios';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 window.axios = axios;
 // provider is a component that makes the store accessible to every component in the app
 
